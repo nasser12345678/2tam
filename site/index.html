@@ -381,11 +381,29 @@
   .collage .c2{background:linear-gradient(135deg,#5b6f8a,#2c3a52)}
   .collage .c3{background:linear-gradient(135deg,#7c5a3a,#4a2f1c)}
   .collage > div .ph-stripes{position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,249,232,.06) 0 2px,transparent 2px 12px)}
-  .features{display:grid;grid-template-columns:1fr 1fr;gap:24px 32px}
-  .feature{display:flex;flex-direction:column;gap:10px}
-  .feature-icon{width:42px;height:42px;border-radius:50%;background:var(--mint);color:var(--green);display:grid;place-items:center}
-  .feature h3{font-family:'Bricolage Grotesque';font-size:18px;font-weight:600;letter-spacing:-0.015em;color:var(--ink)}
-  .feature p{font-size:14px;color:var(--muted);line-height:1.55}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .feature{
+    display:flex;flex-direction:column;gap:12px;padding:22px;
+    border:1.5px solid var(--line-strong);border-radius:var(--r-card);
+    background:#fff;
+    transition:background 0.32s ease,color 0.32s ease,border-color 0.32s ease,transform 0.28s cubic-bezier(0.34,1.3,0.64,1),box-shadow 0.28s ease;
+    cursor:default;
+  }
+  .feature:hover{
+    background:var(--ink);color:var(--cream);
+    border-color:var(--ink);
+    transform:translateY(-4px);
+    box-shadow:0 12px 32px rgba(14,26,20,0.18);
+  }
+  .feature-icon{
+    width:42px;height:42px;border-radius:50%;background:var(--mint);color:var(--green);display:grid;place-items:center;
+    transition:background 0.32s ease,color 0.32s ease;
+  }
+  .feature:hover .feature-icon{background:var(--yellow);color:var(--ink)}
+  .feature h3{font-family:'Bricolage Grotesque';font-size:18px;font-weight:600;letter-spacing:-0.015em;color:var(--ink);transition:color 0.32s ease}
+  .feature:hover h3{color:var(--cream)}
+  .feature p{font-size:14px;color:var(--muted);line-height:1.55;transition:color 0.32s ease}
+  .feature:hover p{color:rgba(255,249,232,0.75)}
   .trust-cta{margin-top:20px;grid-column:1/-1}
 
   /* MORE THAN CLEANING */
@@ -401,30 +419,50 @@
   .mtc-photo .ph-stripes{position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,249,232,.06) 0 2px,transparent 2px 12px)}
   .mtc-mid{display:flex;flex-direction:column;gap:18px;justify-content:center}
   @media(min-width:1024px){.mtc-mid{justify-content:space-between;gap:24px}}
-  .stat-block{border-radius:24px;padding:28px 28px 32px;display:flex;flex-direction:column;gap:6px}
+  .stat-block{
+    border-radius:24px;padding:28px 28px 32px;display:flex;flex-direction:column;gap:6px;
+    transition:background 0.32s ease,color 0.32s ease,box-shadow 0.32s ease,transform 0.28s cubic-bezier(0.34,1.3,0.64,1);
+    cursor:default;
+  }
   @media(min-width:1024px){.mtc-mid .stat-block{flex:1;justify-content:center}}
   .stat-block .num{font-family:'Bricolage Grotesque';font-size:56px;font-weight:700;line-height:1;letter-spacing:-0.04em}
   .stat-block .lbl{font-size:13px;line-height:1.4;max-width:200px;font-weight:500}
   .stat-block .lbl small{display:block;opacity:.7;font-weight:400;margin-top:2px;font-size:12px}
   .stat-block.cream{background:var(--cream);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+  .stat-block.cream:hover{background:var(--ink);color:var(--cream);box-shadow:none;transform:translateY(-4px)}
   .stat-block.dark{background:var(--ink);color:var(--cream)}
+  .stat-block.dark:hover{background:var(--cream);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);transform:translateY(-4px)}
 
   .mtc-test{
     background:linear-gradient(155deg, var(--mint) 0%, var(--mint) 50%, var(--butter) 100%);
     border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:24px;justify-content:space-between;
     position:relative;overflow:hidden;
+    transition:background 0.32s ease,transform 0.28s cubic-bezier(0.34,1.3,0.64,1),box-shadow 0.28s ease;
+    cursor:default;
   }
-  .mtc-quote-mark{font-family:'Bricolage Grotesque';font-size:80px;color:var(--green);line-height:.5;font-weight:700;height:24px}
-  .mtc-test p{font-size:16px;line-height:1.55;color:var(--ink)}
-  .mtc-test em{font-style:italic;color:var(--green);font-weight:500}
+  .mtc-test:hover{
+    background:var(--ink);
+    transform:translateY(-4px);
+    box-shadow:0 14px 36px rgba(14,26,20,0.18);
+  }
+  .mtc-quote-mark{font-family:'Bricolage Grotesque';font-size:80px;color:var(--green);line-height:.5;font-weight:700;height:24px;transition:color 0.32s ease}
+  .mtc-test:hover .mtc-quote-mark{color:var(--yellow)}
+  .mtc-test p{font-size:16px;line-height:1.55;color:var(--ink);transition:color 0.32s ease}
+  .mtc-test:hover p{color:rgba(255,249,232,0.85)}
+  .mtc-test em{font-style:italic;color:var(--green);font-weight:500;transition:color 0.32s ease}
+  .mtc-test:hover em{color:var(--yellow)}
   .mtc-author{display:flex;align-items:center;gap:12px}
   .mtc-author .av{
     width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--yellow);
     display:grid;place-items:center;font-weight:700;font-size:14px;flex:0 0 44px;font-family:'Bricolage Grotesque';
+    transition:background 0.32s ease,color 0.32s ease;
   }
+  .mtc-test:hover .mtc-author .av{background:var(--yellow);color:var(--ink)}
   .mtc-author .meta{font-size:13px;line-height:1.4}
-  .mtc-author .name{font-weight:600;color:var(--ink)}
-  .mtc-author .role{color:var(--muted)}
+  .mtc-author .name{font-weight:600;color:var(--ink);transition:color 0.32s ease}
+  .mtc-test:hover .mtc-author .name{color:var(--cream)}
+  .mtc-author .role{color:var(--muted);transition:color 0.32s ease}
+  .mtc-test:hover .mtc-author .role{color:rgba(255,249,232,0.6)}
 
   /* PROCESS */
   .process{background:var(--green);color:var(--cream);border-radius:var(--r-panel);margin:0 16px;position:relative;overflow:hidden}
@@ -440,11 +478,27 @@
   @media(min-width:1024px){.process-grid{grid-template-columns:3fr 1fr;gap:48px;align-items:start}}
   .process-steps{display:grid;grid-template-columns:1fr;gap:16px}
   @media(min-width:768px){.process-steps{grid-template-columns:repeat(2,1fr);gap:18px}}
-  .pstep{padding:28px;border-radius:20px;background:rgba(255,249,232,.06);position:relative;display:flex;flex-direction:column;gap:14px}
-  .pstep-icon{width:44px;height:44px;border-radius:50%;background:rgba(255,230,64,.16);color:var(--yellow);display:grid;place-items:center}
+  .pstep{
+    padding:28px;border-radius:20px;background:rgba(255,249,232,.06);position:relative;display:flex;flex-direction:column;gap:14px;
+    border:1.5px solid transparent;
+    transition:background 0.32s ease,border-color 0.32s ease,transform 0.28s cubic-bezier(0.34,1.3,0.64,1);
+    cursor:default;
+  }
+  .pstep:hover{
+    background:rgba(255,249,232,0.14);
+    border-color:rgba(255,230,64,0.5);
+    transform:translateY(-4px);
+  }
+  .pstep-icon{
+    width:44px;height:44px;border-radius:50%;background:rgba(255,230,64,.16);color:var(--yellow);display:grid;place-items:center;
+    transition:background 0.32s ease;
+  }
+  .pstep:hover .pstep-icon{background:var(--yellow);color:var(--ink)}
   .pstep-num{font-size:12px;color:var(--yellow);font-weight:500}
-  .pstep h3{color:var(--cream);font-family:'Bricolage Grotesque';font-size:20px;font-weight:600;letter-spacing:-0.015em}
-  .pstep p{font-size:14px;color:rgba(255,249,232,.72);line-height:1.55}
+  .pstep h3{color:var(--cream);font-family:'Bricolage Grotesque';font-size:20px;font-weight:600;letter-spacing:-0.015em;transition:color 0.32s ease}
+  .pstep:hover h3{color:var(--yellow)}
+  .pstep p{font-size:14px;color:rgba(255,249,232,.72);line-height:1.55;transition:color 0.32s ease}
+  .pstep:hover p{color:rgba(255,249,232,0.92)}
   .supervision{background:var(--cream);color:var(--ink);border-radius:20px;padding:28px;align-self:start}
   .supervision .eyebrow{color:var(--muted);margin-bottom:14px;display:block}
   .supervision .eyebrow::before{color:var(--muted)}
@@ -493,17 +547,33 @@
     background:#fff;border-radius:24px;padding:28px;
     box-shadow:inset 0 0 0 1px var(--line);
     display:flex;flex-direction:column;gap:18px;position:relative;
+    transition:background 0.32s ease,color 0.32s ease,transform 0.28s cubic-bezier(0.34,1.3,0.64,1),box-shadow 0.28s ease;
+    cursor:default;
+  }
+  .tcard:hover{
+    background:var(--ink);color:var(--cream);
+    transform:translateY(-5px);
+    box-shadow:0 16px 40px rgba(14,26,20,0.18);
   }
   .tcard.gradient{
     background:linear-gradient(155deg, var(--mint) 0%, var(--mint) 60%, var(--butter) 100%);
     box-shadow:none;
   }
-  .tcard .qm{font-family:'Bricolage Grotesque';font-size:60px;color:var(--green);line-height:.4;height:18px;font-weight:700}
-  .tcard .quote{font-size:16px;line-height:1.55;color:var(--ink);flex:1}
+  .tcard.gradient:hover{
+    background:var(--ink);
+    box-shadow:0 16px 40px rgba(14,26,20,0.18);
+  }
+  .tcard .qm{font-family:'Bricolage Grotesque';font-size:60px;color:var(--green);line-height:.4;height:18px;font-weight:700;transition:color 0.32s ease}
+  .tcard:hover .qm{color:var(--yellow)}
+  .tcard .quote{font-size:16px;line-height:1.55;color:var(--ink);flex:1;transition:color 0.32s ease}
+  .tcard:hover .quote{color:rgba(255,249,232,0.85)}
   .tcard .author{display:flex;align-items:center;gap:12px}
-  .tcard .av{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--yellow);display:grid;place-items:center;font-weight:700;font-size:14px;flex:0 0 44px;font-family:'Bricolage Grotesque'}
-  .tcard .name{font-weight:600;font-size:14px;color:var(--ink)}
-  .tcard .role{font-size:13px;color:var(--muted)}
+  .tcard .av{width:44px;height:44px;border-radius:50%;background:var(--green);color:var(--yellow);display:grid;place-items:center;font-weight:700;font-size:14px;flex:0 0 44px;font-family:'Bricolage Grotesque';transition:background 0.32s ease,color 0.32s ease}
+  .tcard:hover .av{background:var(--yellow);color:var(--ink)}
+  .tcard .name{font-weight:600;font-size:14px;color:var(--ink);transition:color 0.32s ease}
+  .tcard:hover .name{color:var(--cream)}
+  .tcard .role{font-size:13px;color:var(--muted);transition:color 0.32s ease}
+  .tcard:hover .role{color:rgba(255,249,232,0.6)}
 
   .logos-row h4{font-size:13px;color:var(--muted);margin:0 0 24px;text-align:center;font-weight:500}
   .logos-row h4::before{content:"— "}
@@ -601,6 +671,10 @@
   [data-reveal]:nth-child(2){transition-delay:0.08s}
   [data-reveal]:nth-child(3){transition-delay:0.16s}
   [data-reveal]:nth-child(4){transition-delay:0.24s}
+
+  /* ESTIMATION STEP FADE */
+  #qs-step-content{transition:opacity 0.25s ease,transform 0.25s ease}
+  #qs-step-content.qs-fade-out{opacity:0;transform:translateY(6px)}
 
   /* TYPOGRAPHY REFINEMENTS */
   h1,h2,h3{font-feature-settings:'kern' 1,'liga' 1,'calt' 1;text-wrap:balance}
@@ -704,7 +778,7 @@
             <li><span class="hero-promise-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Équipe encadrée</li>
           </ul>
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn-dark"><span>Devis sur WhatsApp</span><span class="btn-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Zm4.55-6.18c-.25-.13-1.47-.72-1.7-.81s-.39-.13-.55.13-.64.81-.78.97-.29.19-.54.06a6.78 6.78 0 0 1-2-1.23 7.55 7.55 0 0 1-1.39-1.73c-.15-.25 0-.39.11-.51s.25-.29.37-.43a1.57 1.57 0 0 0 .25-.42.46.46 0 0 0 0-.43c-.07-.13-.55-1.32-.75-1.81s-.4-.41-.55-.42h-.47a.91.91 0 0 0-.66.31 2.78 2.78 0 0 0-.86 2.06 4.84 4.84 0 0 0 1 2.55 11 11 0 0 0 4.21 3.71c.59.25 1 .4 1.39.51a3.34 3.34 0 0 0 1.53.1 2.51 2.51 0 0 0 1.65-1.16 2 2 0 0 0 .14-1.16c-.06-.11-.23-.17-.48-.3Z"/></svg></span></a>
+            <a href="https://wa.me/212681263154" target="_blank" rel="noopener" class="btn btn-dark"><span>Devis sur WhatsApp</span><span class="btn-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Zm4.55-6.18c-.25-.13-1.47-.72-1.7-.81s-.39-.13-.55.13-.64.81-.78.97-.29.19-.54.06a6.78 6.78 0 0 1-2-1.23 7.55 7.55 0 0 1-1.39-1.73c-.15-.25 0-.39.11-.51s.25-.29.37-.43a1.57 1.57 0 0 0 .25-.42.46.46 0 0 0 0-.43c-.07-.13-.55-1.32-.75-1.81s-.4-.41-.55-.42h-.47a.91.91 0 0 0-.66.31 2.78 2.78 0 0 0-.86 2.06 4.84 4.84 0 0 0 1 2.55 11 11 0 0 0 4.21 3.71c.59.25 1 .4 1.39.51a3.34 3.34 0 0 0 1.53.1 2.51 2.51 0 0 0 1.65-1.16 2 2 0 0 0 .14-1.16c-.06-.11-.23-.17-.48-.3Z"/></svg></span></a>
             <a href="#estimation" class="btn btn-ghost"><span>Estimation en 30 s</span><span class="btn-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span></a>
           </div>
           <p class="arabic hero-arabic">نظافة مهنية بمعايير واضحة، خدمة مؤطرة، واحترام كامل لمواعيدكم.</p>
@@ -1151,13 +1225,13 @@
             <div class="cta-card">
               <h3><span class="cta-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Zm4.55-6.18c-.25-.13-1.47-.72-1.7-.81s-.39-.13-.55.13-.64.81-.78.97-.29.19-.54.06a6.78 6.78 0 0 1-2-1.23 7.55 7.55 0 0 1-1.39-1.73c-.15-.25 0-.39.11-.51s.25-.29.37-.43a1.57 1.57 0 0 0 .25-.42.46.46 0 0 0 0-.43c-.07-.13-.55-1.32-.75-1.81s-.4-.41-.55-.42h-.47a.91.91 0 0 0-.66.31 2.78 2.78 0 0 0-.86 2.06 4.84 4.84 0 0 0 1 2.55 11 11 0 0 0 4.21 3.71c.59.25 1 .4 1.39.51a3.34 3.34 0 0 0 1.53.1 2.51 2.51 0 0 0 1.65-1.16 2 2 0 0 0 .14-1.16c-.06-.11-.23-.17-.48-.3Z"/></svg></span> WhatsApp</h3>
               <p class="cta-sub">Le canal le plus simple pour démarrer. Réponse en moyenne sous 1 h.</p>
-              <a href="#" class="btn btn-dark" style="align-self:flex-start"><span>Discuter sur WhatsApp</span><span class="btn-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg></span></a>
+              <a href="https://wa.me/212681263154" target="_blank" rel="noopener" class="btn btn-dark" style="align-self:flex-start"><span>Discuter sur WhatsApp</span><span class="btn-ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg></span></a>
             </div>
 
             <div class="cta-card dark">
               <h3><span class="cta-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span> Téléphone</h3>
               <p class="cta-sub">Pour une demande urgente ou un échange direct.</p>
-              <a href="tel:+212600000000" class="cta-phone">+212 6 XX XX XX XX</a>
+              <a href="tel:+212663138158" class="cta-phone">06 63 13 81 58</a>
               <div style="padding-top:14px;border-top:1px solid rgba(255,249,232,.12);font-size:13px;color:rgba(255,249,232,.55)">
                 Lun – Sam · 8 h – 19 h
               </div>
@@ -1200,7 +1274,8 @@
       <h4>Contact</h4>
       <ul>
         <li>Casablanca, Maroc</li>
-        <li><a href="tel:+212600000000">+212 6 XX XX XX XX</a></li>
+        <li><a href="tel:+212663138158">06 63 13 81 58</a></li>
+        <li><a href="https://wa.me/212681263154" target="_blank" rel="noopener">WhatsApp : 06 81 26 31 54</a></li>
         <li><a href="mailto:contact@2tam-services.ma">contact@2tam-services.ma</a></li>
         <li style="color:var(--yellow);font-weight:600;margin-top:6px">Lun – Sam · 8 h – 19 h</li>
       </ul>
@@ -1220,40 +1295,28 @@
   <div class="container foot-bottom">
     <span>© 2026 2TAM Services · Casablanca · Made in Morocco</span>
     <div class="foot-social">
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="https://www.instagram.com/2tam_services/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
       <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M13 22v-8h3l.5-3.5H13V8c0-1 .3-1.7 1.7-1.7H17V3.2C16.6 3.1 15.4 3 14.1 3 11.5 3 9.7 4.6 9.7 7.5v3H7V14h2.7v8H13Z"/></svg></a>
-      <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg></a>
+      <a href="https://wa.me/212681263154" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg></a>
     </div>
   </div>
 </footer>
 
 <!-- ============== MOBILE STICKY BAR ============== -->
 <div class="sticky-bar" id="sticky-bar" role="region" aria-label="Actions rapides">
-  <a href="#contact" class="sb-wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg> WhatsApp</a>
-  <a href="tel:+212600000000" class="sb-tel"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> Appeler</a>
+  <a href="https://wa.me/212681263154" target="_blank" rel="noopener" class="sb-wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19.05 4.91A10 10 0 0 0 12 2a10 10 0 0 0-8.66 15l-1.3 4.71 4.83-1.27A10 10 0 0 0 12 22a10 10 0 0 0 7.05-17.09ZM12 20.27a8.28 8.28 0 0 1-4.22-1.16l-.3-.18-2.86.75.77-2.79-.2-.31A8.27 8.27 0 1 1 12 20.27Z"/></svg> WhatsApp</a>
+  <a href="tel:+212663138158" class="sb-tel"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg> Appeler</a>
 </div>
 
 <script>
 (function(){
-  // === Header scroll glassmorphic ===
+  // === Header scroll glassmorphic — triggers immediately on any scroll ===
   var header = document.getElementById('site-header');
-  var hero = document.querySelector('.hero');
-  if (hero) {
-    var scrollObserver = new IntersectionObserver(
-      function(entries) {
-        header.classList.toggle('scrolled', !entries[0].isIntersecting);
-      },
-      { threshold: 0, rootMargin: '-80px 0px 0px 0px' }
-    );
-    scrollObserver.observe(hero);
-  } else {
-    function onScrollHeader(){
-      if (window.scrollY > 80) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
-    }
-    window.addEventListener('scroll', onScrollHeader, {passive:true});
-    onScrollHeader();
+  function onScrollHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
   }
+  window.addEventListener('scroll', onScrollHeader, {passive:true});
+  onScrollHeader();
 
   // === Mobile menu toggle ===
   var hamburger = document.getElementById('hamburger');
@@ -1451,19 +1514,30 @@
   }
   function render(){ renderProgress(); renderStep(); }
 
+  function fadeStep(fn) {
+    qsContent.classList.add('qs-fade-out');
+    setTimeout(function() {
+      fn();
+      render();
+      qsContent.classList.remove('qs-fade-out');
+    }, 220);
+  }
   qsContent.addEventListener('click', function(e){
     var t = e.target.closest('[data-type]');
     var s = e.target.closest('[data-surf]');
     var f = e.target.closest('[data-freq]');
     if (t){
-      qsState.type = t.getAttribute('data-type'); render();
-      setTimeout(function(){ qsState.step = 2; render(); }, 220);
+      qsState.type = t.getAttribute('data-type');
+      render();
+      setTimeout(function(){ fadeStep(function(){ qsState.step = 2; }); }, 80);
     } else if (s){
-      qsState.surf = s.getAttribute('data-surf'); render();
-      setTimeout(function(){ qsState.step = 3; render(); }, 220);
+      qsState.surf = s.getAttribute('data-surf');
+      render();
+      setTimeout(function(){ fadeStep(function(){ qsState.step = 3; }); }, 80);
     } else if (f){
-      qsState.freq = f.getAttribute('data-freq'); render();
-      setTimeout(function(){ qsState.step = 4; render(); }, 220);
+      qsState.freq = f.getAttribute('data-freq');
+      render();
+      setTimeout(function(){ fadeStep(function(){ qsState.step = 4; }); }, 80);
     }
   });
   qsBack.addEventListener('click', function(){
